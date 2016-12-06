@@ -64,10 +64,7 @@ public class PokerHub extends Hub {
 				resetOutput();
 				sendToAll(HubPokerTable);
 				break;
-			case TableState:
-				resetOutput();
-				sendToAll(HubPokerTable);
-				break;
+			
 			case StartGame:
 				// Get the rule from the Action object.
 				Rule rle = new Rule(act.geteGame());
@@ -131,20 +128,7 @@ public class PokerHub extends Hub {
 				resetOutput();
 				sendToAll(HubGamePlay);
 				break;
-			case ScoreGame:
-				// Am I at the end of the game?
-				try {
-					HubGamePlay.ScoreGame();
-					HubGamePlay.seteGameState(eGameState.SCORED);
-				} catch (HandException e) {
-					resetOutput();
-					sendToAll(e);
-					e.printStackTrace();
-					return;
-				}
-				resetOutput();
-				sendToAll(HubGamePlay);
-				break;
+			
 			}
 			
 		}

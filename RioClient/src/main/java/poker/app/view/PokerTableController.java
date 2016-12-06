@@ -136,11 +136,13 @@ public class PokerTableController implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		imgViewDealerButtonPos3.setVisible(true);
 		imgViewDealerButtonPos4.setVisible(true);
+		
 
 		lblPlayerPos1.setText("1");
 		lblPlayerPos2.setText("2");
 		lblPlayerPos3.setText("3");
 		lblPlayerPos4.setText("4");
+		
 
 		lblWinningPlayer.setText("");
 		lblWinningHand.setText("");
@@ -157,8 +159,8 @@ public class PokerTableController implements Initializable {
 
 	@FXML
 	public void GetGameState() {
-		Action act = new Action(eAction.GameState, mainApp.getPlayer());
-		mainApp.messageSend(act);
+		//Action act = new Action(eAction.GameState, mainApp.getPlayer());
+		//mainApp.messageSend(act);
 	}
 
 	public void btnSitLeave_Click(ActionEvent event) {
@@ -258,7 +260,7 @@ public class PokerTableController implements Initializable {
 	 * @param HubPokerTable
 	 */
 	public void Handle_TableState(Table HubPokerTable) {
-
+		
 		lblPlayerPos1.setText("");
 		lblPlayerPos2.setText("");
 		lblPlayerPos3.setText("");
@@ -277,6 +279,7 @@ public class PokerTableController implements Initializable {
 					getSitLeave(iPlayerPos).setVisible(false);
 				}
 			}
+			
 		}
 
 		// Note: Players have been seated, set the Sit/Leave text
@@ -293,6 +296,8 @@ public class PokerTableController implements Initializable {
 				}
 			}
 		}
+		
+	
 	}
 
 	public void Handle_GameState(GamePlay HubPokerGame) {
@@ -496,17 +501,20 @@ public class PokerTableController implements Initializable {
 	 */
 	@FXML
 	void btnDeal_Click(ActionEvent event) {
+		/*
 
 		// Set the new Deal action
 		Action act = new Action(eAction.Draw, mainApp.getPlayer());
 
 		// Send the Action to the Hub
 		mainApp.messageSend(act);
+		*/
 
 	}
 
 	@FXML
 	public void btnFold_Click(ActionEvent event) {
+		/*
 		Button btnFold = (Button) event.getSource();
 		switch (btnFold.getId().toString()) {
 		case "btnPlayer1Fold":
@@ -523,10 +531,12 @@ public class PokerTableController implements Initializable {
 			break;
 
 		}
+		*/
 	}
 
 	@FXML
 	public void btnCheck_Click(ActionEvent event) {
+		/*
 		Button btnCheck = (Button) event.getSource();
 		switch (btnCheck.getId().toString()) {
 		case "btnPlayer1Check":
@@ -542,6 +552,7 @@ public class PokerTableController implements Initializable {
 			// Check for Player 4
 			break;
 		}
+		*/
 	}
 
 	private void FadeButton(Button btn) {
